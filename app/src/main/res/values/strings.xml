@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">QuestionAndAnswer</string>
+
+
+    <string name="login_activity_text">login here</string>
+    <string name="login_button_text">Login</string>
+    <string name="login_error_message">user name or password invalid</string>
+    <string name="add_question_title">add question to the database</string>
+    <string name="add_question_button">add</string>
+    <string name="add_question_success">question added successfullly</string>
+    <string name="add_question_failure">questions cannot be added</string>
+    <string name="alert_success_title">success</string>
+    <string name="ok_button">ok</string>
+    <string name="aler_error_title">error</string>
+
+
+</resources>
