@@ -12,6 +12,10 @@
     <string name="alert_success_title">success</string>
     <string name="ok_button">ok</string>
     <string name="aler_error_title">error</string>
+    <string name="opt_a">a)</string>
+    <string name="opt_b" >b)</string>
+    <string name="opt_c">c)</string>
+    <string name="opt_d">d)</string>
 
 
 </resources>

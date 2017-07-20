@@ -33,14 +33,14 @@ public QuestionDao(Context context)
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        String createTblQuery="create table"+QUES_TBL_NAME+"("+
-                ""+KEY_ID+"INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                ""+KEY_QUES+"TEXT,"+
-                ""+KEY_OPT_A+"TEXT,"+
-                ""+KEY_OPT_B+"TEXT,"+
-                ""+KEY_OPT_C+"TEXT,"+
-                ""+KEY_OPT_D+"TEXT,"+
-                ""+KEY_RIGHT_ANS+"TEXT)";
+        String createTblQuery="create table "+QUES_TBL_NAME+"("+
+                ""+KEY_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                ""+KEY_QUES+" TEXT,"+
+                ""+KEY_OPT_A+" TEXT,"+
+                ""+KEY_OPT_B+" TEXT,"+
+                ""+KEY_OPT_C+" TEXT,"+
+                ""+KEY_OPT_D+" TEXT,"+
+                ""+KEY_RIGHT_ANS+" TEXT)";
         db.execSQL(createTblQuery);
     }
 

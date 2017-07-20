@@ -77,10 +77,10 @@ public class AdminActivity extends BaseActivity implements AdminActivityInterfac
            case R.id.add_ques_button:
                Bundle bundle=new Bundle();
                bundle.putString(Constants.KEY_QUES,quesEditText.getText().toString());
-               bundle.putString(Constants.KEY_OPT_A,quesEditText.getText().toString());
-               bundle.putString(Constants.KEY_OPT_B,quesEditText.getText().toString());
-               bundle.putString(Constants.KEY_OPT_C,quesEditText.getText().toString());
-               bundle.putString(Constants.KEY_OPT_D,quesEditText.getText().toString());
+               bundle.putString(Constants.KEY_OPT_A,optionAEditText.getText().toString());
+               bundle.putString(Constants.KEY_OPT_B,optionBEditText.getText().toString());
+               bundle.putString(Constants.KEY_OPT_C,optionCEditText.getText().toString());
+               bundle.putString(Constants.KEY_OPT_D,optionDEditText.getText().toString());
                bundle.putString(Constants.KEY_RIGHT_ANS,rightAnsEditText.getText().toString());
                adminPresenter.addQuestion(bundle);
                break;
@@ -103,6 +103,8 @@ public class AdminActivity extends BaseActivity implements AdminActivityInterfac
                 startActivity(getIntent());
             }
         });
+
+        alertDialog.show();
 
     }
 

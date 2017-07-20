@@ -7,6 +7,7 @@ import com.example.mgs1982.questionandanswer.R;
 import com.example.mgs1982.questionandanswer.activity.AdminActivityInterface;
 import com.example.mgs1982.questionandanswer.model.QuestionModel;
 import com.example.mgs1982.questionandanswer.util.Constants;
+import com.example.mgs1982.questionandanswer.util.QuestionDao;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -18,11 +19,13 @@ public class AdminPresenter implements AdminPresenterInterface
 {
     AdminActivityInterface adminActivity;
     Context context;
+    QuestionDao questionDao;
 
     public AdminPresenter(Context context,AdminActivityInterface adminActivity)
     {
         this.adminActivity=adminActivity;
         this.context=context;
+        questionDao = new QuestionDao(context);
     }
 
     @Override
@@ -41,6 +44,7 @@ public class AdminPresenter implements AdminPresenterInterface
         {
             try
             {
+                questionDao.addQuestion(model);
                 adminActivity.quesAddedSuccess(context.getString(R.string.add_question_success));
             }
             catch (Exception e)
@@ -51,20 +55,20 @@ public class AdminPresenter implements AdminPresenterInterface
         }
         else
         {
-            adminActivity.quesAddedFailure("your right answer must contain within your right option");
+            adminActivity.quesAddedFailure("your right answer must contain within your options");
         }
     }
 
     private boolean verifyAdminIp(QuestionModel model)
     {
-        if(model.getOptionA().equals(model.getRightAns()))
+        if (model.getOptionA().equals(model.getRightAns()))
             return true;
-       else if(model.getOptionB().equals(model.getRightAns()))
+        else if (model.getOptionB().equals(model.getRightAns()))
             return true;
-       else if(model.getOptionC().equals(model.getRightAns()))
+        else if (model.getOptionC().equals(model.getRightAns()))
             return true;
-       else if(model.getOptionD().equals(model.getRightAns()))
-            return  true;
+        else if (model.getOptionD().equals(model.getRightAns()))
+            return true;
         return false;
     }
 }
